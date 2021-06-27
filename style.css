@@ -1,0 +1,317 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    /* width: fit-content; */
+  }
+  
+.bg{
+  background: url("images/cricket-stadium-vector.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+}
+  /* nav{
+    
+    height: 50px;
+    width: 100%;
+    padding-bottom: 10px;
+    
+  }   */
+
+  nav{
+    overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  }
+  .bg label.logo{
+    text-align: center;
+  }
+  label.logo{
+    color: rgb(55, 44, 218);
+    font-size: 70px;
+    /* line-height: 80px; */
+    padding: 0 500px;
+    font-weight: bold;
+    position: fixed;
+    top: 50px;
+  }
+  label.logo span{
+    color: rgb(235, 16, 16);
+}
+  nav ul{
+    float: right;
+    margin-right: 20px;
+  }
+  nav ul li{
+    display: inline-block;
+    /* line-height: 80px; */
+    /* margin: 0 5px; */
+  }
+  nav ul li a{
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+    text-decoration: none;
+    padding: 7px 13px;
+    border-radius: 10px;
+    text-transform: uppercase;
+  }
+  a.active,a:hover{
+    background: #ffa41b;
+    transition: .5s;
+  }
+
+
+
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+/* .mySlides {display: none;} */
+img {vertical-align: middle;}
+
+
+
+
+label.logo{
+  color: rgb(55, 44, 218);
+  font-size: 70px;
+  width: 100%;
+  font-weight: bold;
+  text-shadow: 2px 2px #FF0000;
+  /* position: fixed; */
+  top: 50px;
+  text-align: center;
+}
+label.logo span{
+  color: rgb(235, 16, 16);
+  text-shadow: 2px 2px rgb(55, 44, 218);
+}
+
+
+
+/* ========================== */
+#slider {
+  position: relative;
+  max-width: 725px;
+  height: 30vw;
+  margin: auto;
+  /* width: 50%;
+  height: 30vw;
+  margin: 80px auto; */
+  top: 150px;
+  font-family: 'Helvetica Neue', sans-serif;
+  perspective: 1400px;
+  transform-style: preserve-3d;
+}
+
+input[type=radio] {
+  position: relative;
+  top: 104%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  margin: 0 15px 0 0;
+  opacity: 0.4;
+  transform: translateX(-83px);
+  cursor: pointer;
+}
+
+
+input[type=radio]:nth-child(5) {
+  margin-right: 0px;
+}
+
+input[type=radio]:checked {
+  opacity: 1;
+}
+
+
+
+
+#slider label, img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  color: white;
+  font-size: 70px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 400ms ease;
+}
+
+#slide1 {
+  background: url("images/Batsman.jpg");
+}
+
+
+#slide2 {
+  background: url("images/cricket-bat--ball-and-wickets-in-cricket-ground-.jpg");
+}
+
+#slide3 {
+  background: dodgerblue;
+}
+
+#slide4 {
+  background: slateblue;
+}
+
+#slide5 {
+  background: violet;
+}
+
+.content {
+  position: relative;
+  max-width: 725px;
+  height: 30vw;
+  margin: auto;
+  border-radius: 10px;
+  line-height: 30px;
+
+  font-size: 25px;
+  font-weight: lighter;
+  position: absolute; /* Position the background text */
+  bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1; /* Grey text */
+  width: 100%; /* Full width */
+  padding: 40px; /* Some padding */
+}
+
+/* Slider Functionality */
+
+/* Active Slide */
+#s1:checked ~ #slide1, #s2:checked ~ #slide2, #s3:checked ~ #slide3, #s4:checked ~ #slide4, #s5:checked ~ #slide5 {
+  box-shadow: 0 13px 26px rgba(0,0,0, 0.3), 0 12px 6px rgba(0,0,0, 0.2);
+  transform: translate3d(0%, 0, 0px);
+}
+
+/* Next Slide */
+#s1:checked ~ #slide2, #s2:checked ~ #slide3, #s3:checked ~ #slide4, #s4:checked ~ #slide5, #s5:checked ~ #slide1 {
+  box-shadow: 0 6px 10px rgba(0,0,0, 0.3), 0 2px 2px rgba(0,0,0, 0.2);
+  transform: translate3d(15%, 0, -100px);
+}
+
+
+/* Next to Next Slide */
+#s1:checked ~ #slide3, #s2:checked ~ #slide4, #s3:checked ~ #slide5, #s4:checked ~ #slide1, #s5:checked ~ #slide2 {
+  box-shadow: 0 1px 4px rgba(0,0,0, 0.4);
+  transform: translate3d(30%, 0, -250px);
+}
+
+/* Previous to Previous Slide */
+#s1:checked ~ #slide4, #s2:checked ~ #slide5, #s3:checked ~ #slide1, #s4:checked ~ #slide2, #s5:checked ~ #slide3 {
+  box-shadow: 0 1px 4px rgba(0,0,0, 0.4);
+  transform: translate3d(-30%, 0, -250px);
+}
+
+/* Previous Slide */
+#s1:checked ~ #slide5, #s2:checked ~ #slide1, #s3:checked ~ #slide2, #s4:checked ~ #slide3, #s5:checked ~ #slide4 {
+  box-shadow: 0 6px 10px rgba(0,0,0, 0.3), 0 2px 2px rgba(0,0,0, 0.2);
+  transform: translate3d(-15%, 0, -100px);
+}
+
+/* ===footer====================================== */
+footer .bottom{
+  background-color: #171C24;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+/* ===Responsiveness====================================== */
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 40px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+@media (max-width: 985px){
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+
+
+  #slider{
+    top: 500px;
+  }
+}
+@media (max-width: 921px){
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 15px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+
+
+  #slider{
+    top: 750px;
+  }
+}
